@@ -82,6 +82,7 @@ class MySQLCRUDManager {
    * Find a single record by ID
    * @param {number} id - The ID of the record to find
    * @param {string[]} fields - The fields to select (default `*`)
+   * @param {object[]} joins - An array of objects that describe a table join (JOIN)
    * @returns {object|null} - The found record or `null`
    */
   async findById(id, fields = ['*'], joins = []) {

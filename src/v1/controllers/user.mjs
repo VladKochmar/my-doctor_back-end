@@ -91,8 +91,13 @@ class UserController {
 
     if (!errors.isEmpty()) {
       const formattedErrors = {}
+
       errors.array().forEach(error => {
-        formattedErrors[error.path] = error.msg
+        if (formattedErrors[error.path]) {
+          formattedErrors[error.path].push(error.msg)
+        } else {
+          formattedErrors[error.path] = [error.msg]
+        }
       })
 
       return res.status(400).json({

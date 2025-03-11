@@ -32,6 +32,14 @@ class UserValidator {
       notEmpty: {
         errorMessage: 'Name is required',
       },
+      isLength: {
+        options: { min: 2 },
+        errorMessage: 'Name must be at least 2 characters long',
+      },
+      matches: {
+        options: /^[A-Za-z]+$/,
+        errorMessage: 'Name must contain only letters and spaces',
+      },
     },
     email: {
       isEmail: {
@@ -79,6 +87,14 @@ class UserValidator {
       escape: true,
       notEmpty: {
         errorMessage: 'Name is required',
+      },
+      isLength: {
+        options: { min: 2 },
+        errorMessage: 'Name must be at least 2 characters long',
+      },
+      matches: {
+        options: /^[A-Za-z\s]+$/,
+        errorMessage: 'Name must contain only letters and spaces',
       },
     },
     email: {

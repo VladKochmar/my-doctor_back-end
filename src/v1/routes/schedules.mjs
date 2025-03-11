@@ -5,6 +5,8 @@ import ScheduleController from '../controllers/schedule.mjs'
 import { Router } from 'express'
 const router = Router()
 
+router.get('/my', ScheduleController.getDoctorsSchedule)
+
 router.get('/doctor/:id', ScheduleController.getSchedulesByDoctorId)
 
 router.post('/update', checkSchema(ScheduleValidator.scheduleSchema), ScheduleController.createSchedule)
